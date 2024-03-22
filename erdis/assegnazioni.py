@@ -1,7 +1,7 @@
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, session, url_for, make_response
+    Blueprint, flash, redirect, render_template, request, make_response
 )
-from werkzeug.utils import secure_filename
+from library import pandas_days_for_month
 
 bp = Blueprint('assegnazioni', __name__)
 
@@ -26,11 +26,9 @@ def home():
             flash('Nessun file selezionato')
             return redirect(request.url)
         if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            # verifica, modifica e restituisce il file
-            result = file
+            result = pandas_days_for_month.main(file)
             response = make_response(result)
-            response.headers["Content-Disposition"] = "attachment; filename=VERIFICATO_" + file.filename + ""
+            response.headers["Content-Disposition"] = "attachment; filename=CALCOLATO_" + file.filename + ""
             return response
 
     return render_template("assegnazioni.html")

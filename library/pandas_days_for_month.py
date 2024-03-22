@@ -1,15 +1,15 @@
 import pandas as pd
 
 
-def main():
-    FILE_IN = 'data/assegnazioni.csv'
+def main(file_in):
     FILE_OUT = 'data/assegnazioni_calc.csv'
     # TODO calculate index from DataFrame
     START_COLUMN_INDEX = 48
 
-    print("Debug - Elaborazione dei dati contenuti su:", FILE_IN,  "iniziata")
+    print("Debug - Elaborazione dei dati contenuti su:", file_in.filename,  "iniziata")
 
-    ass = pd.read_csv(FILE_IN, sep=';')
+    # .stream.read().decode("windows-1252")
+    ass = pd.read_csv(file_in, sep=';')
 
     df_final = add_days_for_month(ass, 'ASSE. DATA_ING', 'ASSE. DATA_UN')
 
@@ -19,6 +19,8 @@ def main():
     df_final.to_csv(FILE_OUT, sep=';')
 
     print("Debug - Elaborazione terminata. I risultati sono disponibili nel file:", FILE_OUT)
+
+    return df_final.to_csv(sep=";")
 
 
 def add_days_for_month(df: pd.DataFrame, date_in: str, date_out: str) -> pd.DataFrame:
