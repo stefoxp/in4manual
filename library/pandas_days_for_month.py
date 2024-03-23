@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def main(file_in):
-    FILE_OUT = 'data/assegnazioni_calc.csv'
+    # FILE_OUT = 'data/assegnazioni_calc.csv'
     # TODO calculate index from DataFrame
     START_COLUMN_INDEX = 48
 
@@ -16,9 +16,9 @@ def main(file_in):
     df_final = price_for_month(df_final, START_COLUMN_INDEX)
     df_final = replace_char_in_dataframe_columns(df_final, START_COLUMN_INDEX, '.', ',')
 
-    df_final.to_csv(FILE_OUT, sep=';')
+    # df_final.to_csv(FILE_OUT, sep=';')
 
-    print("Debug - Elaborazione terminata. I risultati sono disponibili nel file:", FILE_OUT)
+    print("Debug - Elaborazione terminata. I risultati sono disponibili nel nuovo file che è stato scaricato")
 
     return df_final.to_csv(sep=";")
 
