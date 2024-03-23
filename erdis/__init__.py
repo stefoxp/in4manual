@@ -12,9 +12,13 @@ def create_app(test_config=None):
     @app.route('/hello')
     def hello():
         return 'Hello, World!'
+    
+    from . import home
+    app.register_blueprint(home.bp)
+    app.add_url_rule('/', endpoint='home')
 
     from . import assegnazioni
     app.register_blueprint(assegnazioni.bp)
-    app.add_url_rule('/', endpoint='home')
+    app.add_url_rule('/assegnazioni', endpoint='assegnazioni')
 
     return app
