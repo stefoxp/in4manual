@@ -4,12 +4,15 @@
 {% block title %}
 Carica il file
 {% endblock %}
+{% block headertitle %}
+Gestione Assegnazioni alloggi (Sono ammessi solo file .csv)
+{% endblock %}
 {% block bodytitle %}
-Aggiunge il calcolo dei giorni per mese ad un export Assegnazioni alloggi (Sono ammessi solo file .csv)
+Aggiunge il calcolo dei giorni per mese ad un export Assegnazioni alloggi
 {% endblock %}
 {% block content %}
-<form method=post enctype=multipart/form-data>
-    <input type=file name=file required>
-    <input type=submit value=Verifica>
-    </form>
+<form method='post' enctype='multipart/form-data'>
+    <input type='file' name='file' accept='.csv' required>
+    <input type='submit' value='Elabora'>
+</form>
 {% endblock %}

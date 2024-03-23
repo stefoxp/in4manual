@@ -11,12 +11,9 @@
                 <a href="{{ url_for('home') }}" class="navbar-brand">
                         <img src="{{ url_for('static', filename='img/torna.png') }}" alt="Torna alla home" title="Torna alla home" />
                 </a>
-                <a href="{{ url_for('assegnazioni') }}" class="navbar-brand">
-                    Assegnazioni alloggi
-                </a>
             </div>
             <div>
-                <h1>{% block bodytitle %}{% endblock %}</h1>
+                <h1>{% block headertitle %}{% endblock %}</h1>
             </div>
             <div class="logo">
                 <img src="{{ url_for('static', filename='img/logoErdis.gif') }}"
@@ -26,6 +23,8 @@
         </header>
 
         <div class="body-content">
+            <h2>{% block bodytitle %}{% endblock %}</h2>
+
             {% block content %}
             {% endblock %}
             <hr/>

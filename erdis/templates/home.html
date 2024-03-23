@@ -4,6 +4,14 @@
 {% block title %}
 In4manual
 {% endblock %}
-{% block bodytitle %}
+{% block headertitle %}
 Automation for In4m
+{% endblock %}
+{% block bodytitle %}
+Home page
+{% endblock %}
+{% block content %}
+<a href="{{ url_for('assegnazioni') }}" class="navbar-brand">
+    Assegnazioni alloggi
+</a>
 {% endblock %}
