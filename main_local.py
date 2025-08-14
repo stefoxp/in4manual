@@ -11,4 +11,5 @@ if __name__ == "__main__":
         "start_date": ["2023-01-01", "2023-03-01", "2023-03-01", "2023-04-01"],
         "end_date": ["2023-01-31", "2023-03-31", "2023-03-15", "2023-04-30"],
     }
-    pandas_join_tables.join_tables(passy_data, domus_data)
+
+    final_df_actual = pandas_join_tables.join_tables(passy_data, domus_data)

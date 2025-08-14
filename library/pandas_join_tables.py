@@ -46,3 +46,5 @@ def join_tables(passy_data, domus_data):
     0        A 2023-01-15 2023-01-01 2023-01-31
     3        C 2023-04-05 2023-04-01 2023-04-30
     """
+
+    return final_df
