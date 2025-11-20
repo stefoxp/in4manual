@@ -2,8 +2,8 @@
 from library import pandas_days_for_month
 
 if __name__ == "__main__":
-    file = "data/allo_assegnazioni_dal20240901_aa_2024-25.csv"
-    FILE_OUT = "data/assegnazioni_calc.csv"
+    file = "data/allo_assegnazioni_dal20230901_aa_2023-24.csv"
+    FILE_OUT = "data/allo_assegnazioni_dal20230901_aa_2023-24_calc.csv"
     result = pandas_days_for_month.main(file, FILE_OUT)
     """
     # Sample passy table data
