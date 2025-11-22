@@ -1,0 +1,10 @@
+# Dipendenze per CSV Control
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Code quality (opzionale)
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
